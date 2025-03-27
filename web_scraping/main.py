@@ -1,5 +1,6 @@
 from scraper import get_pdf_links
-from download import download_pdfs
+from download_pdf import download_pdf
+from download_ans import download_ans
 from compress import compress_files
 
 def main():
@@ -11,11 +12,14 @@ def main():
         return
 
     print("Baixando PDFs...")
-    downloaded_files = download_pdfs(pdf_links)
+    downloaded_files = download_pdf(pdf_links)
 
     if downloaded_files:
         print("Compactando arquivos...")
         compress_files(downloaded_files)
+        
+    print("Baixando arquivos ANS...")
+    download_ans()
 
 if __name__ == "__main__":
     main()
