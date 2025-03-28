@@ -1,6 +1,6 @@
 import os
 import requests
-from config import DOWNLOAD_FOLDER
+from config import SCRAPING_FOLDER
 
 def download_pdf(pdf_links):
     downloaded_files = []
@@ -8,7 +8,7 @@ def download_pdf(pdf_links):
     for idx, link in enumerate(pdf_links, start=1):
         pdf_url = link if link.startswith("http") else f"https://www.gov.br{link}"
         pdf_name = f"anexo_{idx}.pdf"
-        pdf_path = os.path.join(DOWNLOAD_FOLDER, pdf_name)
+        pdf_path = os.path.join(SCRAPING_FOLDER, pdf_name)
 
         print(f"Baixando {pdf_name}...")
 

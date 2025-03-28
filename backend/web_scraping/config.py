@@ -10,7 +10,7 @@ SCRAPING_FOLDER = os.path.join(DOWNLOAD_FOLDER, "scraping")
 
 DATABASE_FOLDER = os.path.join(DOWNLOAD_FOLDER, "database")
 
-ZIP_PATH = os.path.join(DOWNLOAD_FOLDER, "anexos.zip")
+ZIP_PATH = os.path.join(SCRAPING_FOLDER, "anexos.zip")
 
 # Cria as pastas caso não existam
 os.makedirs(SCRAPING_FOLDER, exist_ok=True)
