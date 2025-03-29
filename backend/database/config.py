@@ -99,7 +99,8 @@ def main():
         scripts = [
             'sql/init_db.sql',
             'sql/import_data.sql',
-            'sql/querys.sql'
+            'sql/top_operators_quarter.sql',
+            'sql/top_operators_year.sql'
         ]
         
         for script in scripts:
