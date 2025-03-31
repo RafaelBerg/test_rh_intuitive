@@ -16,11 +16,13 @@ def run_script(script):
         print(f"{script} executado com sucesso!\n")
     else:
         print(f"Erro ao executar {script}:\n{result.stderr}\n")
+        return False
+    return True
 
 if __name__ == "__main__":
     for script in SCRIPTS:
-        run_script(script)
-    
-    # Iniciar o servidor FastAPI com Uvicorn
-    print("Iniciando o servidor...")
-    subprocess.run(["python", "-m", "uvicorn", "server.app:app", "--reload"])
+        if not run_script(script): 
+            print("Erro ao executar os scripts, não iniciando o servidor.")
+            exit(1)
+    print("Todos os scripts executados com sucesso. Iniciando o servidor...")
+    subprocess.run(["python", "-m", "uvicorn", "backend.server.app:app", "--reload"])
