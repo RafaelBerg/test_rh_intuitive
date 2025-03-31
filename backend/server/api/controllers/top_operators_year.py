@@ -3,7 +3,7 @@ import os
 
 async def top_operators_year():
     try:
-        file_path = os.path.abspath("database/sql/top_operators_year.sql")
+        file_path = os.path.abspath("backend/database/sql/top_operators_year.sql")
 
         if not os.path.exists(file_path):
             raise FileNotFoundError(f"Arquivo não encontrado: {file_path}")
